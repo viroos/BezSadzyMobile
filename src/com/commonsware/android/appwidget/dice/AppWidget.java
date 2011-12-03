@@ -88,11 +88,13 @@ public class AppWidget extends AppWidgetProvider {
     PendingIntent pi=PendingIntent.getBroadcast(ctxt, 0 , i,
                                                 PendingIntent.FLAG_UPDATE_CURRENT);
     
-    updateViews.setImageViewResource(R.id.left_die,
+    updateViews.setImageViewResource(R.id.station1,
                                      IMAGES.get(states[0])); 
     //updateViews.setOnClickPendingIntent(R.id.left_die, pi);
-   updateViews.setImageViewResource(R.id.right_die,
-                                   IMAGES.get(states[1])); 
+   updateViews.setImageViewResource(R.id.station2,
+                                   IMAGES.get(states[1]));
+   updateViews.setImageViewResource(R.id.station3,
+           IMAGES.get(states[2]));
     //pdateViews.setOnClickPendingIntent(R.id.right_die, pi);
     //updateViews.setOnClickPendingIntent(R.id.background, pi);
     

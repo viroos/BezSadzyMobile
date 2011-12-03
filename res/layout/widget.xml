@@ -6,15 +6,28 @@
     android:layout_height="match_parent"
     android:background="@drawable/widget_frame"
     >
-  <ImageView android:id="@+id/left_die"
+  <ImageView android:id="@+id/station1"
     android:layout_centerVertical="true"
     android:layout_alignParentLeft="true"
     android:src="@drawable/good"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginLeft="7dip"
+    android:layout_marginRight="63dip"
   />
-  <ImageView android:id="@+id/right_die"
+  
+    <ImageView android:id="@+id/station2"
+    android:layout_centerVertical="true"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/good"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="63dip"
+    android:layout_marginRight="63dip"
+    
+  />
+  
+  <ImageView android:id="@+id/station3"
     android:layout_centerVertical="true"
     android:layout_alignParentRight="true"
     android:src="@drawable/good"
