@@ -15,38 +15,51 @@
    
 package com.commonsware.android.appwidget.dice;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.HashMap;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpGet;
-
-import android.app.Notification;
-import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.app.Service;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.net.http.AndroidHttpClient;
-import android.os.IBinder;
+import android.os.Bundle;
 import android.util.Log;
 import android.widget.RemoteViews;
 
 public class AppWidget extends AppWidgetProvider {
-  private static final int[] IMAGES={R.drawable.die_1,R.drawable.die_2,
-                                      R.drawable.die_3,R.drawable.die_4,
-                                      R.drawable.die_5,R.drawable.die_6};
+	
+  private static String []states;
+
+  private static final HashMap<String,Integer> IMAGES = new HashMap<String,Integer>();
+
+  public AppWidget() {
+	  IMAGES.put("good", R.drawable.good);
+	  IMAGES.put("notbad", R.drawable.notbad);
+	  IMAGES.put("bad", R.drawable.bad);
+	  IMAGES.put("verybad", R.	drawable.verybad);
+	  IMAGES.put("extremelybad", R.drawable.extremelybad);
+
+}
   
   @Override
   public void onReceive(Context context, Intent intent) {
 	  AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
       ComponentName thisAppWidget = new ComponentName(context, AppWidget.class);
+      if(intent.getAction().equals(AllertService.UPDATE)){
+      Bundle extras = intent.getExtras();
+     
+      states = extras.getStringArray("states");
+      
+    
+      Log.d("1",states[0]);
+      Log.d("2",states[1]);
+      Log.d("3",states[2]);
+      }
+
+      
+      
+      
       int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget);
       try {
           onUpdate(context, appWidgetManager, appWidgetIds);
@@ -74,15 +87,15 @@ public class AppWidget extends AppWidgetProvider {
     
     PendingIntent pi=PendingIntent.getBroadcast(ctxt, 0 , i,
                                                 PendingIntent.FLAG_UPDATE_CURRENT);
-    /*
+    
     updateViews.setImageViewResource(R.id.left_die,
-                                     IMAGES[(int)(Math.random()*6)]); 
-    updateViews.setOnClickPendingIntent(R.id.left_die, pi);
-    updateViews.setImageViewResource(R.id.right_die,
-                                     IMAGES[(int)(Math.random()*6)]); 
-    updateViews.setOnClickPendingIntent(R.id.right_die, pi);
-    updateViews.setOnClickPendingIntent(R.id.background, pi);
-     */
+                                     IMAGES.get(states[0])); 
+    //updateViews.setOnClickPendingIntent(R.id.left_die, pi);
+   updateViews.setImageViewResource(R.id.right_die,
+                                   IMAGES.get(states[1])); 
+    //pdateViews.setOnClickPendingIntent(R.id.right_die, pi);
+    //updateViews.setOnClickPendingIntent(R.id.background, pi);
+    
     return(updateViews);    
   }
     

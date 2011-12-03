@@ -55,7 +55,6 @@ public class AllertService extends Service {
 			//RemoteViews remoteView = new RemoteViews(getApplicationContext() .getPackageName(), R.layout.widget);
 			Intent intent = new Intent(getApplicationContext(), AppWidget.class);
 			intent.setAction(UPDATE);
-			this.sendBroadcast(intent);
 			
 			BufferedReader in = null;
 			String page = null;
@@ -84,11 +83,16 @@ public class AllertService extends Service {
 					JSONObject s2 = pm10.getJSONObject("sonda2");
 					JSONObject s3 = pm10.getJSONObject("sonda3");
 					
+					
 					String s1State = s1.getString("state");
 					String s2State = s2.getString("state");
 					String s3State = s3.getString("state");
 					
-					Log.d("state",s1State+s2State+s3State);
+					String []states = {s1State, s2State, s3State};
+					
+					intent.putExtra("states", states);
+					this.sendBroadcast(intent);
+  
 
 
 					
@@ -143,7 +147,7 @@ public class AllertService extends Service {
 					}
 				}
 
-			}, 0, 1000*20);
+			}, 0, 1000);
 		}
 
 		@Override
