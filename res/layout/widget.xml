@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/background"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/widget_frame"
-    >
-  <ImageView android:id="@+id/station1"
-    android:layout_centerVertical="true"
-    android:layout_alignParentLeft="true"
-    android:src="@drawable/good"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="7dip"
-    android:layout_marginRight="63dip"
-  />
-  
-    <ImageView android:id="@+id/station2"
-    android:layout_centerVertical="true"
-    android:layout_alignParentRight="true"
-    android:src="@drawable/good"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="63dip"
-    android:layout_marginRight="63dip"
-    
-  />
-  
-  <ImageView android:id="@+id/station3"
-    android:layout_centerVertical="true"
-    android:layout_alignParentRight="true"
-    android:src="@drawable/good"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginRight="7dip"
-  />
-</RelativeLayout>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/background" android:orientation="vertical"
+	android:layout_width="fill_parent" android:layout_height="100dp"
+	android:background="@drawable/widget_frame">
+
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:layout_width="match_parent"
+		android:layout_height="50dp">
+		<ImageView android:id="@+id/station1" android:src="@drawable/good"
+			android:layout_width="0px" android:layout_weight="1"
+			android:layout_height="wrap_content" android:gravity="left" />
+
+		<ImageView android:id="@+id/station2" android:src="@drawable/good"
+			android:layout_width="0px" android:layout_weight="1"
+			android:layout_height="wrap_content" android:gravity="center" />
+
+		<ImageView android:id="@+id/station3" android:src="@drawable/good"
+			android:layout_width="0px" android:layout_weight="1"
+			android:layout_height="wrap_content" android:gravity="right" />
+	</LinearLayout>
+	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="horizontal" android:layout_width="fill_parent"
+		android:layout_height="50dp">
+		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/textview1" android:layout_width="0px" android:layout_weight="1"
+			android:layout_height="50dp" android:text="Ursynów" android:gravity="center"/>
+		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/textview2" android:layout_width="0px" android:layout_weight="1"
+			android:layout_height="50dp" android:text="Niepodległości"  android:gravity="center"/>
+		<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/textview3" android:layout_width="0px" android:layout_weight="1"
+			android:layout_height="50dp" android:text="Targówek"  android:gravity="center"/>									
+	</LinearLayout>
+</LinearLayout>

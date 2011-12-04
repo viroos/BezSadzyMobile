@@ -106,8 +106,9 @@ public class AllertService extends Service {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			boolean notify = page.trim().equalsIgnoreCase("zdm");
-			return notify;
+			//boolean notify = page.trim().equalsIgnoreCase("zdm");
+			//return notify;
+			return true;
 		}
 
 		private void notificationLoop() {

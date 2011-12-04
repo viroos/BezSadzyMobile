@@ -12,22 +12,23 @@ public final class R {
     }
     public static final class drawable {
         public static final int bad=0x7f020000;
-        public static final int bg=0x7f020001;
-        public static final int cw=0x7f020002;
-        public static final int extremelybad=0x7f020003;
-        public static final int good=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int icon=0x7f020006;
-        public static final int notbad=0x7f020007;
-        public static final int notification_icon=0x7f020008;
-        public static final int verybad=0x7f020009;
-        public static final int widget_frame=0x7f02000a;
+        public static final int cw=0x7f020001;
+        public static final int extremelybad=0x7f020002;
+        public static final int good=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int notbad=0x7f020005;
+        public static final int notification_icon=0x7f020006;
+        public static final int verybad=0x7f020007;
+        public static final int widget_frame=0x7f020008;
     }
     public static final class id {
         public static final int background=0x7f060000;
         public static final int station1=0x7f060001;
         public static final int station2=0x7f060002;
         public static final int station3=0x7f060003;
+        public static final int textview1=0x7f060004;
+        public static final int textview2=0x7f060005;
+        public static final int textview3=0x7f060006;
     }
     public static final class layout {
         public static final int invisible=0x7f030000;
