@@ -1,39 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >    
+    android:background="#F2F2F2" >
 
-		<TableLayout
-		    android:id="@+id/tableLayout1"
-		    android:layout_width="match_parent"
-		    android:layout_height="wrap_content"
-		    android:layout_weight="1" >
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#F2F2F2" >
 
-		    <TableRow
-		        android:id="@+id/tableRow1"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content" >
-		        <TextView android:name="cos"/>
-		    </TableRow>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:background="#F2F2F2"
+            android:padding="20dp"
+            android:text="Legenda"
+            android:textColor="#333333" />
 
-		    <TableRow
-		        android:id="@+id/tableRow2"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content" >
-		    </TableRow>
+        <TableLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/tableLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="40dp"
+            android:layout_weight="1"
+            android:background="#F2F2F2" >
 
-		    <TableRow
-		        android:id="@+id/tableRow3"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content" >
-		    </TableRow>
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
 
-		    <TableRow
-		        android:id="@+id/tableRow4"
-		        android:layout_width="wrap_content"
-		        android:layout_height="wrap_content" >
-		    </TableRow>
-		</TableLayout>
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/good" />
 
-</LinearLayout>
+                <TextView
+                    android:layout_width="220dp"
+                    android:layout_height="80dp"
+                    android:text="Możesz swobodnie korzystać z aktywności na otwartym powietrzu."
+                    android:textColor="#333333" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:src="@drawable/notbad" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:text="Osoby mające problemy ze zdrowiem powinny ograniczyć aktywność ruchową na otwartym powietrz"
+                    android:textColor="#333333" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:src="@drawable/bad" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:text="Jeśli możesz, ogranicz czas przebywania na otwartym powietrzu. Unikaj spacerów i aktywności ruchowej wzdłuż ruchliwych ulic."
+                    android:textColor="#333333" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:src="@drawable/verybad" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:text="Ostrzegamy, poziom zanieczyszczenia powietrza jest wysoki; długotrwałe przebywanie oraz aktywność ruchowa na otwartym powietrzu wskazana tylko dla osób zdrowych"
+                    android:textColor="#333333" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" >
+
+                <ImageView
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:src="@drawable/extremelybad" />
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:text="Uwaga! Bardzo wysoki poziom zanieczyszczenia. Unikaj przebywania w pobliżu ruchliwych ulic, odradza się aktywność fizyczną na otwartym powietrzu."
+                    android:textColor="#333333" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</ScrollView>
