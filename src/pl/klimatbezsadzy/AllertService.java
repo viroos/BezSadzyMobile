@@ -138,6 +138,8 @@ public class AllertService extends Service {
 
 					notification.setLatestEventInfo(context, contentTitle,
 							contentText, contentIntent);
+					
+					notification.flags|=Notification.FLAG_AUTO_CANCEL;
 
 					//
 					// Send the notification
