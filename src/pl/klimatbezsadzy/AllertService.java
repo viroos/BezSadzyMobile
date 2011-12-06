@@ -45,7 +45,7 @@ public class AllertService extends Service {
 		public void onCreate() {
 
 			httpClient = AndroidHttpClient.newInstance("mobiledeveloper.pl");
-			request = new HttpGet("http://www.hackerspace.pl/~viroos/sadza");
+			request = new HttpGet("http://wklejka.caltha.pl/json/");
 
 			notificationLoop();
 
@@ -150,7 +150,7 @@ public class AllertService extends Service {
 					}
 				}
 
-			}, 0, 5000);
+			}, 0, 1000*3600/2);
 		}
 
 		@Override

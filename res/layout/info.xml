@@ -67,7 +67,7 @@
 
                 <TextView
                     android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_height="100dp"
                     android:text="Jeśli możesz, ogranicz czas przebywania na otwartym powietrzu. Unikaj spacerów i aktywności ruchowej wzdłuż ruchliwych ulic."
                     android:textColor="#333333" />
             </TableRow>
@@ -87,7 +87,7 @@
 
                 <TextView
                     android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_height="120dp"
                     android:text="Ostrzegamy, poziom zanieczyszczenia powietrza jest wysoki; długotrwałe przebywanie oraz aktywność ruchowa na otwartym powietrzu wskazana tylko dla osób zdrowych"
                     android:textColor="#333333" />
             </TableRow>
@@ -107,7 +107,7 @@
 
                 <TextView
                     android:layout_width="80dp"
-                    android:layout_height="100dp"
+                    android:layout_height="130dp"
                     android:text="Uwaga! Bardzo wysoki poziom zanieczyszczenia. Unikaj przebywania w pobliżu ruchliwych ulic, odradza się aktywność fizyczną na otwartym powietrzu."
                     android:textColor="#333333" />
             </TableRow>
