@@ -45,7 +45,7 @@ public class AllertService extends Service {
 		public void onCreate() {
 
 			httpClient = AndroidHttpClient.newInstance("mobiledeveloper.pl");
-			request = new HttpGet("http://wklejka.caltha.pl/json/");
+			request = new HttpGet("http://powietrze.zm.org.pl/json/?callback=jsonpZMWklejka");
 
 			notificationLoop();
 
@@ -69,9 +69,8 @@ public class AllertService extends Service {
 					sb.append(line + NL);
 				}
 				in.close();
-
 				page = sb.toString();
-				String almost = page.split("jsonZMWklejka\\(")[1];
+				String almost = page.split("jsonpZMWklejka\\(")[1];
 				String final_string = almost.substring(0, almost.length()-2); 				
 				Log.d("page", final_string);
 				try {
