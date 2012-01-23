@@ -24,6 +24,8 @@ import android.util.Log;
 import android.widget.RemoteViews;  
 
 public class AllertService extends Service {
+	
+		public static String[] values ={"0","0","0"};
 		public static String UPDATE = "updateAction";	
 		private Timer timer = new Timer();
 		private JSONObject jObject;
@@ -54,8 +56,8 @@ public class AllertService extends Service {
 		private boolean doCheck() {
 			//RemoteViews remoteView = new RemoteViews(getApplicationContext() .getPackageName(), R.layout.widget);
 			Intent intent = new Intent(getApplicationContext(), AppWidget.class);
+			Intent intent2 = new Intent(UPDATE);
 			intent.setAction(UPDATE);
-			
 			BufferedReader in = null;
 			String page = null;
 			try {
@@ -88,9 +90,15 @@ public class AllertService extends Service {
 					String s3State = s3.getString("state");
 					
 					String []states = {s1State, s2State, s3State};
+					values[0]=s2.getString("current_value");
+					values[1]=s1.getString("current_value");
+					values[2]=s3.getString("current_value");
 					
 					intent.putExtra("states", states);
+					intent2.putExtra("values", values);
 					this.sendBroadcast(intent);
+					this.sendBroadcast(intent2);
+					
   
 
 
@@ -149,7 +157,7 @@ public class AllertService extends Service {
 					}
 				}
 
-			}, 0, 1000*3600/2);
+			}, 0,1000*3600/2); 
 		}
 
 		@Override
